@@ -6,4 +6,86 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "jupyter>=1.1.1",
+    "matplotlib>=3.10.6",
+    "numpy>=2.3.2",
+    "pillow>=11.3.0",
+    "python-dotenv>=1.1.1",
+]
+
+[tool.ruff]
+target-version = "py311"
+
+# Same as Black.
+line-length = 88
+indent-width = 4
+
+# RUFF DEFAULTS
+# (These are all the default groups, even if you don’t currently select them)
+# lint.select = [
+#     "F",    # Pyflakes – detects syntax errors and basic mistakes
+#     "E4",   # Pycodestyle errors (part of E group)
+#     "E7",   # Pycodestyle E7xx errors (naming, etc.)
+#     "E9",   # Pycodestyle E9xx errors (syntax)
+# ]
+
+lint.flake8-quotes.inline-quotes = "double"
+lint.flake8-quotes.multiline-quotes = "double"
+lint.flake8-quotes.docstring-quotes = "double"
+lint.flake8-quotes.avoid-escape = true
+
+lint.extend-select = [
+    "E",    # Pycodestyle errors (style issues)
+    "W",    # Pycodestyle warnings (style issues)
+    "I",    # isort – import ordering checks
+    "N",    # PEP8 Naming – naming conventions
+    "D",    # Pydocstyle – docstring formatting
+    "UP",   # Pyupgrade – upgrades syntax to newer Python versions
+    "ANN",  # Flake8-annotations – enforces type annotation style
+    "S",    # Flake8-bandit – security issues
+    "BLE",  # Flake8-blind-except – flags bare excepts
+    "FBT",  # Flake8-boolean-trap – potential pitfalls with booleans
+    "B",    # Flake8-bugbear – common bug patterns
+    "A",    # Flake8-builtins – misuse of Python built-in names
+    "COM",  # Flake8-commas – trailing/comma issues
+    "C4",   # Flake8-comprehensions – best practices in comprehensions
+    "T10",  # Flake8-debugger – debugger statements (e.g. pdb)
+    "EM",   # Flake8-errmsg – error message style
+    "FA",   # Flake8-future-annotations – future import for annotations
+    "ISC",  # Flake8-implicit-str-concat – warns on implicit string concatenation
+    "ICN",  # Flake8-import-conventions – enforces conventional import aliases
+    "LOG",  # Flake8-logging – proper logging usage
+    "G",    # Flake8-logging-format – logging format string issues
+    "PIE",  # Flake8-pie – Python improvement suggestions
+    "PT",   # Flake8-pytest-style – pytest best practices
+    "Q",    # Flake8-quotes – enforces quote style consistency
+    "RSE",  # Flake8-raise – proper raise statement usage
+    "RET",  # Flake8-return – return statement issues
+    "SLF",  # Flake8-self – flags instance methods that don't use self
+    "SIM",  # Flake8-simplify – code simplification hints
+    "SLOT", # Flake8-slots – suggests use of __slots__ where appropriate
+    "TID",  # Flake8-tidy-imports – enforces specific import styles (e.g., no relative imports)
+    "TC",   # Flake8-type-checking – proper import of typing in type checks
+    "ARG",  # Flake8-unused-arguments – flags unused function arguments
+    "PTH",  # Flake8-use-pathlib – encourages pathlib over os.path
+    "TD",   # Flake8-todos – flags TODO comments
+    "FIX",  # Flake8-fixme – flags FIXME comments
+    "ERA",  # Eradicate – detects commented-out code (potentially dangerous)
+    "PD",   # Pandas-vet – checks pandas-specific code practices
+    "PL",   # Pylint – integration with Pylint conventions
+    "TRY",  # Tryceratops – try/except usage suggestions
+    "FLY",  # Flynt – f-string conversion suggestions
+    "NPY",  # NumPy-specific rules – ensures NumPy coding standards
+    "FAST", # FastAPI – FastAPI-specific linting rules
+    "PERF", # Perflint – performance-related checks
+    "FURB", # Refurb – rules for code refurbishment
+    "DOC",  # Pydoclint – docstring linting and consistency
+    "RUF",  # Ruff-specific rules – additional Ruff checks
+]
+
+lint.ignore = [
+    "D100", # Checks for undocumented public module definitions.
+    "D103", # Checks for undocumented public function definitions.
+    "D107", # Checks for missing docstrings in __init__ methods.
+    "E501", # Line too long
+    "PLR0913", # Too many arguments (X > 5)
 ]
